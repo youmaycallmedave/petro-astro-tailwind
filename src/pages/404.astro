@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Footer from '../components/Footer.astro'
+
+const img404 = "https://www.figma.com/api/mcp/asset/1fbe2e9d-29ac-484c-862a-ca7c9982ecf6"
+const imgArrowBack = "https://www.figma.com/api/mcp/asset/78139912-25fd-4e3c-96b4-8e4b33f01fbc"
+---
+
+<Layout title="404 — PetroSky">
+
+  <!-- Main 404 section -->
+  <section class="bg-[#f5f6f9] w-full min-h-[100svh] mt-[64px] flex flex-col items-center overflow-hidden">
+
+    <!-- Text block -->
+    <div class="flex flex-col items-center gap-8 pt-8 pb-16 px-5 text-center">
+
+      <!-- Tag -->
+      <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7 w-fit">
+        <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+        <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Error 404</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-[48px] md:text-[72px] font-medium leading-none tracking-[-0.72px] max-w-[726px]">
+        <span class="text-[#0d0e0f]">404 Error. Looks Like </span>
+        <span class="text-[#808792]">You've Left Our Orbit</span>
+      </h1>
+
+      <!-- Buttons -->
+      <div class="flex items-center gap-6">
+        <!-- About Us -->
+        <a href="/" class="flex items-center gap-2">
+          <img src={imgArrowBack} alt="" class="size-6 shrink-0" />
+          <div class="flex flex-col">
+            <span class="text-[18px] font-medium tracking-[-0.18px] text-[#0d0e0f] leading-[1.35]">About Us</span>
+            <div class="h-px bg-[#0d0e0f]"></div>
+          </div>
+        </a>
+
+        <!-- Home Page -->
+        <a href="/" class="flex items-center gap-2 bg-[#397dfe] h-[52px] pl-4 pr-6">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 7.5l4.5 3L3 13.5M10 13.5h7" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-[18px] font-medium tracking-[-0.18px] text-[#f5f6f9] whitespace-nowrap">Home Page</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 404 illustration -->
+    <div class="w-full relative">
+      <img src={img404} alt="404 space illustration" class="w-full object-cover" />
+    </div>
+
+  </section>
+
+  <Footer />
+</Layout>
