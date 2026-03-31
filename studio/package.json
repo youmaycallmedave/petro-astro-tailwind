@@ -1,0 +1,17 @@
+{
+  "name": "petrosky-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "start": "sanity start",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "sanity": "^3.88.0",
+    "styled-components": "^6.1.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  }
+}

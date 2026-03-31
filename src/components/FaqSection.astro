@@ -1,26 +1,7 @@
 ---
-const faqs = [
-  {
-    question: "What ports are open by default on my VPS?",
-    answer: "By default, all ports are open on your VPS. You have full control over your firewall settings and can configure port access based on your specific requirements. Common ports like 22 (SSH), 80 (HTTP), and 443 (HTTPS) are accessible right out of the box.",
-  },
-  {
-    question: "Is there any possibility to change the IP Address of my VPS?",
-    answer: "Yes, you can request an IP address change through your control panel. Additional IP addresses are available for a small monthly fee. Please note that changing your primary IP may require a brief maintenance window to update DNS records.",
-  },
-  {
-    question: "What operating systems are available at PetroSky?",
-    answer: "We support a wide range of operating systems including Ubuntu, Debian, CentOS, AlmaLinux, Rocky Linux, Fedora, and Windows Server. You can reinstall your OS at any time from the control panel, and custom ISO uploads are also supported.",
-  },
-  {
-    question: "Can I get a refund if it doesn't work for my needs?",
-    answer: "We offer a 7-day money-back guarantee for all new customers. If you're not satisfied with our service within the first 7 days, contact our support team and we'll process a full refund. After this period, refunds are handled on a case-by-case basis.",
-  },
-  {
-    question: "Is your hosting DMCA-Ignored?",
-    answer: "Our infrastructure is hosted in jurisdictions with flexible DMCA policies, providing you with greater freedom for your projects. However, we do not support illegal activities and reserve the right to suspend accounts that violate our terms of service.",
-  },
-]
+import { getFaqs } from '../lib/sanity.ts'
+
+const faqs = await getFaqs()
 ---
 
 <section class="bg-[#0d0e0f] flex flex-col items-center py-32 w-full">
