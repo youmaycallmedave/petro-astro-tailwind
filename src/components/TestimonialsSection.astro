@@ -39,7 +39,7 @@ const testimonials = await getTestimonials()
       <div class="swiper testimonials-swiper !overflow-visible h-[320px]">
         <div class="swiper-wrapper">
           {testimonials.map((t) => (
-            <div class="swiper-slide !h-full border-t border-b border-r border-dashed border-[#cccfd3] py-6 pr-5 flex flex-col justify-between">
+            <div class="swiper-slide !h-full border-t border-b border-r border-dashed border-[#cccfd3] py-6 px-6 flex flex-col justify-between">
               <!-- Текст + кавычки -->
               <div class="flex items-start justify-between gap-4">
                 <p class="text-[20px] md:text-[24px] font-medium leading-none tracking-[-0.24px] text-[#0d0e0f]">
@@ -96,7 +96,7 @@ const testimonials = await getTestimonials()
   new Swiper('.testimonials-swiper', {
     modules: [Navigation],
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 0,
     grabCursor: true,
     navigation: {
       prevEl: '#t-prev',
