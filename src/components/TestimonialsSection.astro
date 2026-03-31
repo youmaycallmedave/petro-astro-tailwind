@@ -1,26 +1,7 @@
 ---
-const testimonials = [
-  {
-    text: "As an app developer in London, PetroSky's VPS made multi-device Android testing reliable and fast.",
-    name: "Emily R.",
-    location: "United Kingdom",
-  },
-  {
-    text: "Running latency-sensitive workloads on PetroSky feels predictable in the best way. Performance is consistent, and network speed is exactly what we needed.",
-    name: "Daniel M.",
-    location: "Germany",
-  },
-  {
-    text: "We migrated from a larger provider and immediately noticed lower latency and better stability. PetroSky does what it promises — no surprises.",
-    name: "Sofia K.",
-    location: "Netherlands",
-  },
-  {
-    text: "PetroSky's VPS handles heavy testing environments without slowing down. Setup was straightforward, and performance stayed solid under load.",
-    name: "Marco L.",
-    location: "Italy",
-  },
-]
+import { getTestimonials } from '../lib/sanity.ts'
+
+const testimonials = await getTestimonials()
 ---
 
 <section class="bg-[#f5f6f9] flex flex-col items-center py-16 md:py-32 w-full overflow-hidden">

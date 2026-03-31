@@ -12,3 +12,9 @@ export async function getFaqs() {
     `*[_type == "faq"] | order(order asc) { question, answer }`
   )
 }
+
+export async function getTestimonials() {
+  return sanityClient.fetch<{ text: string; name: string; location: string }[]>(
+    `*[_type == "testimonial"] | order(order asc) { text, name, location }`
+  )
+}
