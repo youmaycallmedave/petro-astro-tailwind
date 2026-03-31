@@ -1,0 +1,74 @@
+---
+const cards = [
+  {
+    title: "For Business",
+    description: "Run your office in the cloud. Reliable Windows VPS for remote desktops, accounting, and automation.",
+    icon: `<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="28" cy="28" r="22" stroke="#397dfe" stroke-width="1.5"/>
+      <path d="M28 18v20M23 22h7.5a3.5 3.5 0 0 1 0 7H23m0 0h8a3.5 3.5 0 0 1 0 7H23" stroke="#397dfe" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`,
+    offset: "mt-0",
+  },
+  {
+    title: "For Developers",
+    description: "Build without limits. Fast environments for APIs, containers, and staging with root access.",
+    icon: `<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 32l8-8-8-8" stroke="#397dfe" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26 38h16" stroke="#397dfe" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`,
+    offset: "md:mt-44",
+  },
+  {
+    title: "For Enterprise",
+    description: "Scale with confidence. SLA-backed uptime, DDoS protection, and optional AMD SEV encryption.",
+    icon: `<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="20" width="14" height="26" stroke="#397dfe" stroke-width="1.5"/>
+      <rect x="24" y="14" width="14" height="32" stroke="#397dfe" stroke-width="1.5"/>
+      <rect x="38" y="26" width="8" height="20" stroke="#397dfe" stroke-width="1.5"/>
+      <line x1="10" y1="46" x2="46" y2="46" stroke="#397dfe" stroke-width="1.5"/>
+    </svg>`,
+    offset: "md:mt-[22rem]",
+  },
+]
+---
+
+<section class="bg-[#0d0e0f] w-full py-16 md:py-32 px-5 relative overflow-hidden">
+
+  <!-- Dot background -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,#397dfe_0%,transparent_70%)]"></div>
+
+  <div class="w-full max-w-[1512px] mx-auto">
+
+    <!-- Заголовок -->
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-16 md:mb-20">
+      <div class="flex flex-col gap-6 md:gap-8 items-start max-w-[353px]">
+        <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7">
+          <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+          <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Workloads</span>
+        </div>
+        <h2 class="text-[36px] md:text-[56px] font-medium leading-none tracking-[-0.56px] text-[#f5f6f9]">
+          Built for real workloads
+        </h2>
+      </div>
+      <div class="md:pt-12 max-w-[353px]">
+        <p class="text-[16px] md:text-[20px] font-medium leading-[1.35] tracking-[-0.2px] text-[#f5f6f9]">
+          Designed for teams and developers who need consistent performance, low latency, and full infrastructure control.
+        </p>
+      </div>
+    </div>
+
+    <!-- Карточки — каскадный layout -->
+    <div class="flex flex-col md:flex-row md:items-start gap-5">
+      {cards.map((card) => (
+        <div class={`flex-1 border border-dashed border-[#252526] flex flex-col gap-12 p-5 ${card.offset}`}>
+          <div set:html={card.icon} />
+          <div class="flex flex-col gap-6">
+            <p class="text-[24px] font-medium leading-none tracking-[-0.24px] text-[#f5f6f9]">{card.title}</p>
+            <p class="text-[20px] font-medium leading-[1.35] tracking-[-0.2px] text-[#808792]">{card.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

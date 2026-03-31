@@ -1,0 +1,55 @@
+---
+const logos = [
+  { name: "Dell", src: "https://www.figma.com/api/mcp/asset/60d9507e-f18d-4c75-bf2c-20c59ba698dc" },
+  { name: "Equinix", src: "https://www.figma.com/api/mcp/asset/bdef67f8-69ee-427b-a472-fbd704243c8e" },
+  { name: "Supermicro", src: "https://www.figma.com/api/mcp/asset/e4ada721-ee26-41da-b1ad-ec625727cae2" },
+  { name: "Arelion", src: "https://www.figma.com/api/mcp/asset/ea27ea6a-4441-44b2-b4ca-dd75804b6e65" },
+  { name: "Cisco", src: "https://www.figma.com/api/mcp/asset/a193c08f-c96f-4da1-b049-a2fd991dd515" },
+  { name: "Juniper", src: "https://www.figma.com/api/mcp/asset/f2502802-864d-4b59-bc52-ad9435f637f8" },
+  { name: "AMD", src: "https://www.figma.com/api/mcp/asset/a1885fd8-085b-4cc3-acdc-206bf745d3cd" },
+  { name: "Intel", src: "https://www.figma.com/api/mcp/asset/10a27490-f5b3-4eb6-b685-6f03239801fc" },
+]
+---
+
+<div class="bg-[#f5f6f9] w-full border-t border-b border-dashed border-[#cccfd3] relative overflow-hidden">
+  <div class="flex items-stretch">
+
+    <!-- Лейбл слева -->
+    <div class="shrink-0 w-[180px] border-r border-dashed border-[#cccfd3] flex items-center px-5 py-4 z-10 bg-[#f5f6f9]">
+      <p class="text-[16px] font-medium leading-[1.35] tracking-[-0.16px] text-[#0d0e0f]">Our Technologies Partners</p>
+    </div>
+
+    <!-- Marquee -->
+    <div class="relative flex-1 overflow-hidden flex items-center">
+      <!-- Градиент fade слева -->
+      <div class="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#f5f6f9] to-transparent z-10 pointer-events-none"></div>
+      <!-- Градиент fade справа -->
+      <div class="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#f5f6f9] to-transparent z-10 pointer-events-none"></div>
+
+      <div class="marquee-track flex items-center gap-12 w-max h-full py-0">
+        <!-- Дублируем для бесконечного скролла -->
+        {[...logos, ...logos, ...logos, ...logos].map((logo) => (
+          <img
+            src={logo.src}
+            alt={logo.name}
+            class="h-5 w-auto max-w-[120px] object-contain shrink-0 opacity-60 grayscale"
+          />
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+</style>

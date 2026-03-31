@@ -1,0 +1,67 @@
+---
+---
+
+<section class="bg-[#f5f6f9] w-full relative overflow-hidden flex items-center justify-center h-[100svh]">
+
+  <!-- Dot arc decoration (right side) -->
+  <div class="absolute right-0 top-0 h-full w-1/2 pointer-events-none">
+    <svg class="absolute right-[-10%] top-1/2 -translate-y-1/2 opacity-40" width="600" height="600" viewBox="0 0 600 600" fill="none">
+      <circle cx="300" cy="300" r="220" stroke="#397dfe" stroke-width="0" fill="none"/>
+      {Array.from({ length: 18 }).map((_, row) =>
+        Array.from({ length: 18 }).map((_, col) => {
+          const cx = col * 32 + 16
+          const cy = row * 32 + 16
+          const dist = Math.sqrt((cx - 300) ** 2 + (cy - 300) ** 2)
+          if (dist > 160 && dist < 280 && cx > 200) {
+            return <circle cx={cx} cy={cy} r="2.5" fill="#397dfe" opacity={1 - (dist - 160) / 140} />
+          }
+        })
+      )}
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center gap-8 text-center px-5 max-w-[602px]">
+
+    <!-- Tag -->
+    <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7">
+      <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+      <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Build with us</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="text-[40px] md:text-[56px] font-medium leading-none tracking-[-0.56px] text-[#0d0e0f]">
+      Start with infrastructure you can trust
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-[16px] md:text-[20px] font-medium leading-[1.35] tracking-[-0.2px] text-[#808792] max-w-[477px]">
+      Launch on a production-ready cloud platform built for performance, reliability, and real workloads.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex items-center gap-6 flex-wrap justify-center">
+
+      <!-- Log in -->
+      <a href="#" class="flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H10M17 7V14" stroke="#0d0e0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex flex-col items-start">
+          <span class="text-[18px] font-medium tracking-[-0.18px] text-[#0d0e0f] leading-[1.35]">Log in</span>
+          <div class="h-px w-full bg-[#0d0e0f]"></div>
+        </div>
+      </a>
+
+      <!-- Deploy Now -->
+      <a href="#" class="flex items-center gap-2 bg-[#397dfe] h-[52px] pl-4 pr-6">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M4 9l5 3.5L4 16M12 16h8" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-[18px] font-medium tracking-[-0.18px] text-[#f5f6f9] leading-[1.35] whitespace-nowrap">Deploy Now</span>
+      </a>
+
+    </div>
+  </div>
+
+</section>

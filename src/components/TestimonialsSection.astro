@@ -1,0 +1,133 @@
+---
+const testimonials = [
+  {
+    text: "As an app developer in London, PetroSky's VPS made multi-device Android testing reliable and fast.",
+    name: "Emily R.",
+    location: "United Kingdom",
+  },
+  {
+    text: "Running latency-sensitive workloads on PetroSky feels predictable in the best way. Performance is consistent, and network speed is exactly what we needed.",
+    name: "Daniel M.",
+    location: "Germany",
+  },
+  {
+    text: "We migrated from a larger provider and immediately noticed lower latency and better stability. PetroSky does what it promises — no surprises.",
+    name: "Sofia K.",
+    location: "Netherlands",
+  },
+  {
+    text: "PetroSky's VPS handles heavy testing environments without slowing down. Setup was straightforward, and performance stayed solid under load.",
+    name: "Marco L.",
+    location: "Italy",
+  },
+]
+---
+
+<section class="bg-[#f5f6f9] flex flex-col items-center py-16 md:py-32 w-full overflow-hidden">
+
+  <!-- Заголовок -->
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-12 md:pb-20 px-5 w-full max-w-[1512px]">
+    <div class="flex flex-col gap-6 md:gap-8 items-start max-w-[726px]">
+      <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7">
+        <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+        <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Testimonials</span>
+      </div>
+      <h2 class="text-[32px] md:text-[48px] font-medium leading-none tracking-[-0.48px]">
+        <span class="text-[#808792]">Not marketing promises.</span><br />
+        <span class="text-[#0d0e0f]">Real experiences from teams<br />who build on PetroSky.</span>
+      </h2>
+    </div>
+    <!-- Trustpilot -->
+    <div class="flex items-center gap-3">
+      <div class="flex gap-0.5">
+        {[...Array(5)].map(() => (
+          <div class="size-5 bg-[#00b67a] flex items-center justify-center">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 1L7.5 4.5H11L8 6.5L9 10L6 8L3 10L4 6.5L1 4.5H4.5L6 1Z" fill="white"/>
+            </svg>
+          </div>
+        ))}
+      </div>
+      <span class="text-[20px] font-medium tracking-[-0.2px] underline text-[#0d0e0f]">4.7 / Trustpilot</span>
+    </div>
+  </div>
+
+  <!-- Swiper -->
+  <div class="w-full max-w-[1512px] px-5">
+    <div class="relative">
+      <div class="swiper testimonials-swiper !overflow-visible h-[320px]">
+        <div class="swiper-wrapper">
+          {testimonials.map((t) => (
+            <div class="swiper-slide !h-full border-t border-b border-r border-dashed border-[#cccfd3] py-6 pr-5 flex flex-col justify-between">
+              <!-- Текст + кавычки -->
+              <div class="flex items-start justify-between gap-4">
+                <p class="text-[20px] md:text-[24px] font-medium leading-none tracking-[-0.24px] text-[#0d0e0f]">
+                  {t.text}
+                </p>
+                <svg class="shrink-0 size-8" viewBox="0 0 32 32" fill="none">
+                  <path d="M9.6 20.8C8.32 20.8 7.2 20.32 6.4 19.52C5.6 18.72 5.12 17.6 5.12 16.32C5.12 14.08 6.4 11.84 8.96 9.92L10.56 11.52C9.44 12.32 8.8 13.28 8.64 14.4C8.96 14.24 9.28 14.24 9.6 14.24C10.56 14.24 11.36 14.56 12 15.2C12.64 15.84 12.96 16.64 12.96 17.6C12.96 18.56 12.64 19.36 12 19.84C11.36 20.48 10.56 20.8 9.6 20.8ZM19.84 20.8C18.56 20.8 17.44 20.32 16.64 19.52C15.84 18.72 15.36 17.6 15.36 16.32C15.36 14.08 16.64 11.84 19.2 9.92L20.8 11.52C19.68 12.32 19.04 13.28 18.88 14.4C19.2 14.24 19.52 14.24 19.84 14.24C20.8 14.24 21.6 14.56 22.24 15.2C22.88 15.84 23.2 16.64 23.2 17.6C23.2 18.56 22.88 19.36 22.24 19.84C21.6 20.48 20.8 20.8 19.84 20.8Z" fill="#cccfd3"/>
+                </svg>
+              </div>
+              <!-- Автор -->
+              <div class="flex flex-col gap-2">
+                <p class="text-[18px] font-semibold tracking-[-0.18px] text-[#0d0e0f] leading-[1.35]">{t.name}</p>
+                <p class="text-[16px] font-medium tracking-[-0.16px] text-[#808792] leading-[1.35]">{t.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Навигация -->
+    <div class="flex items-center justify-between mt-6">
+      <a href="#" class="flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 15L3 9M3 9L9 3M3 9H16C18.2091 9 20 10.7909 20 13V21" stroke="#0d0e0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex flex-col">
+          <span class="text-[18px] font-medium tracking-[-0.18px] text-[#0d0e0f] leading-[1.35]">View All</span>
+          <div class="h-px bg-[#0d0e0f] w-full"></div>
+        </div>
+      </a>
+      <div class="flex gap-1">
+        <button id="t-prev" class="bg-[#397dfe] flex items-center justify-center size-8 cursor-pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18L9 12L15 6" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button id="t-next" class="bg-[#397dfe] flex items-center justify-center size-8 cursor-pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 6L15 12L9 18" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  import Swiper from 'swiper'
+  import { Navigation } from 'swiper/modules'
+  import 'swiper/css'
+
+  new Swiper('.testimonials-swiper', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    grabCursor: true,
+    navigation: {
+      prevEl: '#t-prev',
+      nextEl: '#t-next',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 2.5,
+      },
+    },
+  })
+</script>

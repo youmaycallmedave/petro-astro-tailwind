@@ -1,0 +1,73 @@
+---
+const navLinks = [
+  { label: "Features", href: "#" },
+  { label: "Pricing", href: "#", chevron: true },
+  { label: "Solutions", href: "#", chevron: true },
+  { label: "Locations", href: "#", chevron: true },
+  { label: "Blog", href: "#" },
+  { label: "About", href: "#" },
+]
+---
+
+<header class="bg-[#f5f6f9] w-full border-b border-dashed border-[#d4dbe6] fixed top-0 left-0 right-0 z-50">
+  <div class="w-full max-w-[1512px] mx-auto px-5 flex items-center justify-between h-[64px]">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <div class="size-6 bg-[#397dfe] flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1L13 4V10L7 13L1 10V4L7 1Z" stroke="#f5f6f9" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1 class="text-[18px] font-semibold tracking-[-0.18px] text-[#0d0e0f] m-0">PetroSky</h1>
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="flex items-center gap-1 px-3 h-9 text-[15px] font-medium tracking-[-0.15px] text-[#0d0e0f] hover:text-[#397dfe] transition-colors"
+        >
+          {link.label}
+          {link.chevron && (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          )}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-4 shrink-0">
+
+      <!-- Log in -->
+      <a href="#" class="hidden md:flex items-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M6 14L14 6M14 6H9M14 6V11" stroke="#0d0e0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex flex-col items-start">
+          <span class="text-[15px] font-medium tracking-[-0.15px] text-[#0d0e0f] leading-[1.35]">Log in</span>
+          <div class="h-px w-full bg-[#0d0e0f]"></div>
+        </div>
+      </a>
+
+      <!-- Deploy Now -->
+      <a href="#" class="flex items-center gap-2 bg-[#397dfe] h-[40px] pl-3 pr-4">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 7.5l4.5 3L3 13.5M10 13.5h7" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-[15px] font-medium tracking-[-0.15px] text-[#f5f6f9] leading-[1.35] whitespace-nowrap">Deploy Now</span>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden flex items-center justify-center size-9">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 5h14M3 10h14M3 15h14" stroke="#0d0e0f" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</header>

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Colors ─── */
+  --color-primary:          #397dfe;  /* background/blue, border/blue, text/tertiary */
+  --color-bg-light:         #f5f6f9;  /* background/white & grey/primary */
+  --color-bg-light-2:       #eaecf1;  /* background/white & grey/secondary */
+  --color-bg-dark:          #0d0e0f;  /* background/black/primary */
+  --color-text-dark:        #0d0e0f;  /* text/primary */
+  --color-text-light:       #f5f6f9;  /* text/secondary */
+  --color-text-muted:       #808792;  /* text/alternate */
+  --color-border-light:     #cccfd3;  /* border/white & grey/primary */
+  --color-border-dark:      #252526;  /* border/dark */
+
+  /* ─── Typography ─── */
+  --font-sans: "Geist", sans-serif;
+
+  --font-size-tiny:   12px;   /* size/tiny */
+  --font-size-sm:     14px;   /* size/small */
+  --font-size-base:   16px;   /* size/regular */
+  --font-size-md:     18px;   /* size/medium */
+  --font-size-lg:     20px;   /* size/large */
+  --font-size-h6:     24px;   /* size/h6 */
+  --font-size-h2:     56px;   /* size/h2 */
+  --font-size-h1:     64px;   /* size/h1 */
+
+  /* ─── Spacing (Figma paddings) ─── */
+  --spacing-p0:   0px;   /* padding-0  */
+  --spacing-p4:   8px;   /* padding-4  */
+  --spacing-p5:   12px;  /* padding-5  */
+  --spacing-p6:   16px;  /* padding-6  */
+  --spacing-p7:   20px;  /* padding-7  */
+  --spacing-p8:   24px;  /* padding-8  */
+  --spacing-p9:   28px;  /* padding-9  */
+  --spacing-p10:  32px;  /* padding-10 */
+  --spacing-p13:  48px;  /* padding-13 */
+  --spacing-p15:  64px;  /* padding-15 */
+
+  /* ─── Section padding ─── */
+  --spacing-section:        128px; /* section/Medium */
+  --spacing-title-sm:       64px;  /* title/small */
+  --spacing-title-md:       80px;  /* title/medium */
+
+  /* ─── Grid ─── */
+  --spacing-margin:   20px;    /* grid/margins/Margin */
+  --width-col-4:      477px;   /* grid/col/4 */
+  --width-col-5:      602px;   /* grid/col/5 */
+  --width-col-6:      726px;   /* grid/col/6 */
+  --width-col-12:     1472px;  /* grid/col/12 (max container) */
+
+  /* ─── Stroke ─── */
+  --border-width-divider: 1px;
+}

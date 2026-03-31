@@ -1,0 +1,169 @@
+---
+const locations = ['USA', 'France', 'Canada', 'UK']
+
+const imgAMD = "https://www.figma.com/api/mcp/asset/e4ae3bc5-6841-41cc-9bb3-4eb8379723ab"
+const imgCube = "https://www.figma.com/api/mcp/asset/bcc4c1b8-fada-485e-af0c-87ac1249df52"
+const imgGlobe = "https://www.figma.com/api/mcp/asset/d777a84f-93db-49e6-bb7c-2c091f032f96"
+---
+
+<section class="bg-[#0d0e0f] w-full">
+
+  <!-- ─── ЧАСТЬ 1: FEATURES ─── -->
+  <div class="flex flex-col items-center pt-16 md:pt-32 pb-12 md:pb-20 px-5">
+
+    <!-- Заголовок -->
+    <div class="flex flex-col items-center gap-8 text-center max-w-[602px] mb-16 md:mb-20">
+      <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7">
+        <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+        <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Features</span>
+      </div>
+      <h2 class="text-[36px] md:text-[56px] font-medium leading-none tracking-[-0.56px] text-[#f5f6f9]">
+        Power engineered for real performance
+      </h2>
+      <p class="text-[16px] md:text-[20px] font-medium leading-[1.35] tracking-[-0.2px] text-[#808792]">
+        PetroSky is built on a unified infrastructure where network, storage, cloud platform, and performance are engineered together.
+      </p>
+    </div>
+
+    <!-- Карточки -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 w-full max-w-[1472px]">
+
+      <!-- Карточка 1: Latency -->
+      <div class="bg-[#141416] flex flex-col justify-between">
+        <div class="h-[243px] relative overflow-hidden flex flex-col justify-between p-5">
+          <div>
+            <p class="text-[36px] font-medium leading-none tracking-[-0.36px] text-[#f5f6f9]">0.05</p>
+            <p class="text-sm font-medium tracking-[-0.14px] text-[#808792] mt-1">ms / latency</p>
+          </div>
+          <!-- Blue bars -->
+          <div class="flex items-end gap-[2px] h-16 mt-4">
+            {Array.from({ length: 60 }).map((_, i) => {
+              const heights = [40,60,30,80,50,100,45,70,55,90,35,75,65,85,40,95,50,60,80,45,70,30,90,55,75,40,60,85,50,70,30,95,45,80,65,55,40,70,85,50,60,30,90,75,45,80,55,65,40,70,85,50,60,95,45,80,30,70,55,65]
+              return (
+                <div
+                  class="bg-[#397dfe] w-[2px] shrink-0 opacity-80"
+                  style={`height: ${heights[i % heights.length]}%`}
+                ></div>
+              )
+            })}
+          </div>
+          <!-- Teal bars -->
+          <div class="flex items-end gap-[2px] h-16 mt-2">
+            {Array.from({ length: 60 }).map((_, i) => {
+              const heights = [60,40,85,30,70,50,95,45,75,55,90,40,65,80,50,70,30,85,60,45,80,55,70,40,90,65,50,75,85,40,60,50,80,45,70,30,95,55,65,40,70,85,50,60,30,90,75,45,80,55,65,40,70,85,50,60,95,45,80,30]
+              return (
+                <div
+                  class="bg-[#145760] w-[2px] shrink-0 opacity-80"
+                  style={`height: ${heights[i % heights.length]}%`}
+                ></div>
+              )
+            })}
+          </div>
+        </div>
+        <div class="border-t border-dashed border-[#252526] p-5 flex gap-4 items-start">
+          <div class="size-2 bg-[#397dfe] shrink-0 mt-1"></div>
+          <div class="flex flex-col gap-4">
+            <p class="text-[24px] font-medium leading-none tracking-[-0.24px] text-white">Ultra-low latency networking</p>
+            <p class="text-[16px] font-medium leading-[1.35] tracking-[-0.16px] text-[#808792]">Built for high-density workloads, low latency, and consistent performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 2: AMD EPYC -->
+      <div class="bg-[#141416] flex flex-col justify-between border-l border-r border-[#252526]">
+        <div class="h-[243px] flex items-center justify-center relative overflow-hidden">
+          <img
+            src={imgAMD}
+            alt="AMD EPYC processor"
+            class="h-[180px] w-auto object-contain"
+          />
+        </div>
+        <div class="border-b border-dashed border-[#252526] p-5 flex gap-4 items-start">
+          <div class="size-2 bg-[#397dfe] shrink-0 mt-1"></div>
+          <div class="flex flex-col gap-4">
+            <p class="text-[24px] font-medium leading-none tracking-[-0.24px] text-white">Advanced AMD EPYC processors</p>
+            <p class="text-[16px] font-medium leading-[1.35] tracking-[-0.16px] text-[#808792]">Built for high-density workloads, low latency, and consistent performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 3: Ceph Storage -->
+      <div class="bg-[#141416] flex flex-col justify-between">
+        <div class="h-[243px] flex items-center justify-center gap-8 relative overflow-hidden px-8">
+          <!-- Left cube -->
+          <div class="relative">
+            <img src={imgCube} alt="Storage server" class="h-[100px] w-auto object-contain" />
+          </div>
+          <!-- Connector line -->
+          <div class="flex-1 h-px border-t border-dashed border-[#397dfe]"></div>
+          <!-- Right cube -->
+          <div class="relative">
+            <img src={imgCube} alt="Storage server" class="h-[100px] w-auto object-contain" />
+          </div>
+        </div>
+        <div class="border-t border-dashed border-[#252526] p-5 flex gap-4 items-start">
+          <div class="size-2 bg-[#397dfe] shrink-0 mt-1"></div>
+          <div class="flex flex-col gap-4">
+            <p class="text-[24px] font-medium leading-none tracking-[-0.24px] text-white">Self-healing ceph storage backed servers.</p>
+            <p class="text-[16px] font-medium leading-[1.35] tracking-[-0.16px] text-[#808792]">Built for high-density workloads, low latency, and consistent performance.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ссылка Explore All Features -->
+    <div class="mt-12">
+      <a href="#" class="flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 15L3 9M3 9L9 3M3 9H16C18.2091 9 20 10.7909 20 13V21" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex flex-col">
+          <span class="text-[18px] font-medium tracking-[-0.18px] text-[#f5f6f9] leading-[1.35]">Explore All Features</span>
+          <div class="h-px bg-[#f5f6f9] w-full"></div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ─── ЧАСТЬ 2: LOCATION + GLOBE ─── -->
+  <div class="flex flex-col items-center pt-16 md:pt-24 pb-0 px-5 relative overflow-hidden">
+
+    <!-- Заголовок -->
+    <div class="flex flex-col items-center gap-8 text-center max-w-[602px] mb-12">
+      <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7">
+        <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+        <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Location</span>
+      </div>
+      <h2 class="text-[36px] md:text-[56px] font-medium leading-none tracking-[-0.56px] text-[#f5f6f9]">
+        Power engineered for real performance
+      </h2>
+      <p class="text-[16px] md:text-[20px] font-medium leading-[1.35] tracking-[-0.2px] text-[#808792]">
+        PetroSky is built on a unified infrastructure where network, storage, cloud platform, and performance are engineered together.
+      </p>
+    </div>
+
+    <!-- Локации -->
+    <div class="flex flex-wrap gap-4 justify-center mb-16">
+      {locations.map((loc) => (
+        <div class="flex items-center gap-2 bg-[rgba(57,125,254,0.25)] border border-[#397dfe] px-3 h-7 rounded-full">
+          <div class="size-2 bg-[#397dfe] shrink-0"></div>
+          <span class="text-[14px] font-medium tracking-[-0.14px] text-[#397dfe]">{loc}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Глобус (половину обрезаем снизу) -->
+    <div class="w-full max-w-[1472px] relative overflow-hidden" style="height: clamp(300px, 45vw, 650px)">
+      <img
+        src={imgGlobe}
+        alt="Globe"
+        class="w-full absolute top-0 left-0 object-cover object-top mix-blend-lighten"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0d0e0f] pointer-events-none z-10"></div>
+    </div>
+
+  </div>
+
+</section>

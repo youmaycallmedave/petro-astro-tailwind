@@ -1,0 +1,78 @@
+---
+const items = [
+  { label: "VPS Forex Trading", href: "#" },
+  { label: "BlueStacks VPS", href: "#" },
+  { label: "VPS For LDPlayer", href: "#" },
+  { label: "VPS For Genymotion", href: "#" },
+  { label: "VPS For NoxPlayer", href: "#" },
+  { label: "VPS For App Testing", href: "#" },
+]
+---
+
+<section class="bg-[#f5f6f9] flex flex-col items-center py-16 md:py-32 w-full">
+
+  <!-- Заголовок -->
+  <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 pb-12 md:pb-16 px-5 w-full max-w-[1512px]">
+    <div class="flex flex-col gap-6 md:gap-8 items-start">
+      <div class="flex items-center gap-2 bg-[#397dfe] px-2 h-7">
+        <div class="size-2 bg-[#f5f6f9] shrink-0"></div>
+        <span class="text-[#f5f6f9] text-sm font-medium tracking-[-0.14px] whitespace-nowrap">Our Solutions</span>
+      </div>
+      <h2 class="text-[36px] md:text-[56px] font-medium leading-none tracking-[-0.56px] text-[#0d0e0f] max-w-[602px]">
+        The uses of PetroSky VPS services
+      </h2>
+    </div>
+    <div class="md:pt-12 md:max-w-[353px]">
+      <p class="text-[16px] md:text-[20px] font-medium leading-[1.35] tracking-[-0.2px] text-[#808792]">
+        Designed for teams and developers who need consistent performance, low latency, and full infrastructure control.
+      </p>
+    </div>
+  </div>
+
+  <!-- Список -->
+  <div class="flex flex-col gap-4 md:gap-6 items-start px-5 w-full max-w-[1512px]">
+
+    <!-- Шапка списка -->
+    <div class="flex items-center gap-5 w-full text-sm font-medium tracking-[-0.14px] text-[#0d0e0f]">
+      <span class="hidden md:block w-[353px] shrink-0">[ 01  /  {items.length.toString().padStart(2, '0')} ]</span>
+      <span class="md:hidden">[ 01  /  {items.length.toString().padStart(2, '0')} ]</span>
+      <span class="hidden md:block">PETROSKY IS FOR</span>
+    </div>
+
+    <!-- Элементы -->
+    <div class="flex flex-col w-full">
+
+      <!-- Верхний бордер — на всю ширину -->
+      <div class="w-full border-t border-dashed border-[#cccfd3]"></div>
+
+      <!-- Строки: слева спейсер, справа айтемы со своими бордерами -->
+      <div class="flex w-full">
+        <div class="hidden md:block w-[353px] shrink-0"></div>
+
+        <div class="flex flex-col flex-1">
+          {items.map((item, i) => (
+            <a
+              href={item.href}
+              class={`flex items-center w-full cursor-pointer group ${i < items.length - 1 ? 'border-b border-dashed border-[#cccfd3]' : ''}`}
+            >
+              <span class="flex-1 py-4 md:py-5 text-[24px] md:text-[36px] font-medium leading-none tracking-[-0.36px] text-[#0d0e0f]">
+                {item.label}
+              </span>
+              <div class="bg-[#397dfe] flex items-center justify-center size-8 md:size-10 shrink-0 ml-4">
+                <svg class="size-5 md:size-7" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 14H20M20 14L14 8M20 14L14 20" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Нижний бордер — на всю ширину -->
+      <div class="w-full border-t border-dashed border-[#cccfd3]"></div>
+
+    </div>
+
+  </div>
+
+</section>

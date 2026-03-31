@@ -1,0 +1,206 @@
+---
+const slides = [
+  {
+    label: "Introducing PetroSky",
+    text: "Affordable VPS hosting services without any compromise — offering you the stability and security needed for your most demanding projects.",
+  },
+  {
+    label: "Ultra-low Latency",
+    text: "0.05ms network latency across all regions. Built on Juniper and Cisco hardware for consistent, predictable speeds.",
+  },
+  {
+    label: "AMD EPYC Processors",
+    text: "Latest-gen AMD EPYC CPUs with up to 128 cores per node. Purpose-built for high-density, compute-intensive production workloads.",
+  },
+  {
+    label: "Global Locations",
+    text: "Deploy in USA, France, Canada, and the UK. More regions launching soon to put your infrastructure closer to users.",
+  },
+]
+---
+
+<section class="bg-[#f5f6f9] w-full h-[95vh] flex flex-col md:flex-row overflow-hidden mt-[64px]">
+
+  <!-- Left side -->
+  <div class="w-full md:w-1/2 flex flex-col justify-between pt-8 md:pt-12 pb-8 md:pb-10 px-5 md:pl-[max(20px,calc((100%-1512px)/2+20px))] md:pr-10">
+
+    <!-- Top: heading + buttons -->
+    <div class="flex flex-col gap-6 md:gap-8">
+      <h1 class="text-[36px] md:text-[52px] lg:text-[60px] font-medium leading-none tracking-[-0.6px] text-[#0d0e0f]">
+        Increase your efficiency with <span class="text-[#808792]">powerful servers</span>
+      </h1>
+
+      <div class="flex items-center gap-6 flex-wrap">
+
+        <!-- View Technology -->
+        <a href="#" class="flex items-center gap-2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 15L3 9M3 9L9 3M3 9H16C18.2091 9 20 10.7909 20 13V21" stroke="#0d0e0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="flex flex-col items-start">
+            <span class="text-[18px] font-medium tracking-[-0.18px] text-[#0d0e0f] leading-[1.35]">View Technology</span>
+            <div class="h-px w-full bg-[#0d0e0f]"></div>
+          </div>
+        </a>
+
+        <!-- Deploy Now -->
+        <a href="#" class="flex items-center gap-2 bg-[#397dfe] h-[44px] pl-4 pr-6">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 9l5 3.5L4 16M12 16h8" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-[18px] font-medium tracking-[-0.18px] text-[#f5f6f9] leading-[1.35] whitespace-nowrap">Deploy Now</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Bottom: swiper + nav + trustpilot -->
+    <div class="flex flex-col gap-4">
+
+      <!-- Slide text (switched via JS) -->
+      <div class="hero-slide-text flex flex-col gap-3 min-h-[72px]">
+        {slides.map((slide, i) => (
+          <div class={`hero-slide-item flex flex-col gap-2 transition-opacity duration-300 ${i === 0 ? '' : 'hidden'}`} data-slide={i}>
+            <p class="text-[16px] md:text-[18px] font-semibold leading-[1.35] tracking-[-0.18px] text-[#0d0e0f]">{slide.label}</p>
+            <p class="text-[14px] md:text-[16px] font-medium leading-[1.5] tracking-[-0.16px] text-[#808792] max-w-[480px]">{slide.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Nav + Trustpilot row -->
+      <div class="flex items-end justify-between gap-4">
+
+        <!-- Slider nav buttons -->
+        <div class="flex gap-1">
+          <button id="hero-prev" class="bg-[#397dfe] flex items-center justify-center size-8 cursor-pointer shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button id="hero-next" class="bg-[#397dfe] flex items-center justify-center size-8 cursor-pointer shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 5L12.5 10L7.5 15" stroke="#f5f6f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Trustpilot -->
+        <div class="flex flex-col items-end gap-1">
+          <div class="flex gap-0.5">
+            {[...Array(5)].map(() => (
+              <div class="size-5 bg-[#00b67a] flex items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 1L7.5 4.5H11L8 6.5L9 10L6 8L3 10L4 6.5L1 4.5H4.5L6 1Z" fill="white"/>
+                </svg>
+              </div>
+            ))}
+          </div>
+          <p class="text-[11px] font-medium tracking-[-0.11px] text-[#0d0e0f]">
+            TrustScore <strong>4,6</strong> | 73 Reviews
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Progress bars (full width) -->
+      <div class="flex gap-1" id="hero-progress">
+        {slides.map((_, i) => (
+          <div
+            class="flex-1 h-[4px] bg-[#397dfe] transition-opacity duration-300"
+            style={i === 0 ? '' : 'opacity: 0.15'}
+            data-index={i}
+          ></div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Right side: dark panel -->
+  <div class="w-full md:w-1/2 bg-[#0d0e0f] min-h-[400px] md:h-full flex flex-col items-center justify-center relative overflow-hidden p-8">
+
+    <!-- Radial glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(57,125,254,0.15)_0%,transparent_70%)] pointer-events-none"></div>
+
+    <!-- UI Cards -->
+    <div class="relative z-10 flex flex-col gap-4 w-full max-w-[320px]">
+
+      <!-- Card: Primary Instance -->
+      <div class="bg-[#141416] border border-dashed border-[#252526] p-5 flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <span class="text-[13px] font-medium text-[#808792] tracking-[-0.13px]">Primary Instance</span>
+          <div class="flex items-center gap-1.5">
+            <div class="size-2 bg-[#22c55e] rounded-full"></div>
+            <span class="text-[13px] font-medium text-[#22c55e] tracking-[-0.13px]">Active</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <div class="flex justify-between items-center">
+            <span class="text-[12px] text-[#808792]">CPU</span>
+            <span class="text-[12px] font-medium text-[#f5f6f9]">24%</span>
+          </div>
+          <div class="w-full h-1 bg-[#252526]">
+            <div class="h-full bg-[#397dfe] w-[24%]"></div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <div class="flex justify-between items-center">
+            <span class="text-[12px] text-[#808792]">RAM</span>
+            <span class="text-[12px] font-medium text-[#f5f6f9]">6.2 GB / 32 GB</span>
+          </div>
+          <div class="w-full h-1 bg-[#252526]">
+            <div class="h-full bg-[#397dfe] w-[19%]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: Performance Boost -->
+      <div class="bg-[#141416] border border-dashed border-[#397dfe] p-5 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="size-2 bg-[#397dfe] shrink-0"></div>
+          <span class="text-[13px] font-medium text-[#f5f6f9] tracking-[-0.13px]">Performance Boost</span>
+        </div>
+        <p class="text-[12px] text-[#808792] leading-[1.5]">AMD EPYC processors delivering 3.2× faster throughput on compute-intensive workloads.</p>
+      </div>
+
+      <!-- Card: Low Latency -->
+      <div class="bg-[#141416] border border-dashed border-[#252526] p-5 flex items-center justify-between gap-4">
+        <div class="flex flex-col gap-1">
+          <span class="text-[13px] font-medium text-[#808792] tracking-[-0.13px]">Network latency</span>
+          <span class="text-[32px] font-medium leading-none tracking-[-0.32px] text-[#f5f6f9]">0.05<span class="text-[16px] text-[#808792]">ms</span></span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <div class="size-2 bg-[#22c55e] rounded-full animate-pulse"></div>
+          <span class="text-[12px] font-medium text-[#22c55e]">Confirmed</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>('.hero-slide-item')
+  const bars = document.querySelectorAll<HTMLElement>('#hero-progress [data-index]')
+  const prevBtn = document.getElementById('hero-prev')
+  const nextBtn = document.getElementById('hero-next')
+  const total = slides.length
+  let current = 0
+
+  function goTo(index: number) {
+    slides[current].classList.add('hidden')
+    bars[current].style.opacity = '0.15'
+    current = (index + total) % total
+    slides[current].classList.remove('hidden')
+    bars[current].style.opacity = '1'
+  }
+
+  prevBtn?.addEventListener('click', () => goTo(current - 1))
+  nextBtn?.addEventListener('click', () => goTo(current + 1))
+
+  bars.forEach((bar) => {
+    bar.style.cursor = 'pointer'
+    bar.addEventListener('click', () => goTo(Number(bar.dataset.index)))
+  })
+</script>
